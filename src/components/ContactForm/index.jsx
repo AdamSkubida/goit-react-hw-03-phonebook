@@ -19,18 +19,13 @@ export class ContactForm extends Component {
     const { name, number } = this.state;
 
     e.preventDefault();
-    console.log(this.state);
 
     this.props.onAdd(name, number);
-
-    //clearing inputs
-    e.target.name.value = '';
-    e.target.number.value = '';
   };
 
   render() {
     return (
-      <form className={css.form} onSubmit={this.handleSubmit}>
+      <div className={css['form-wrapper']}>
         <div className={css[`label-input`]}>
           <label className={css.label} htmlFor="name">
             Name
@@ -59,10 +54,14 @@ export class ContactForm extends Component {
             onChange={this.handlePhoneChange}
           />
         </div>
-        <button className={css.button} type="submit">
+        <button
+          className={css.button}
+          type="button"
+          onClick={this.handleSubmit}
+        >
           Add contact
         </button>
-      </form>
+      </div>
     );
   }
 }

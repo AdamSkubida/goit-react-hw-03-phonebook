@@ -8,19 +8,17 @@ export class Filter extends Component {
 
   render() {
     return (
-      <form className={css.form}>
-        <div className={css[`label-input`]}>
-          <label className={css.label} htmlFor="filter">
-            Find contact by name
-          </label>
-          <input
-            type="text"
-            name="filter"
-            placeholder="Find contact..."
-            onChange={this.handleFilterChange}
-          ></input>
-        </div>
-      </form>
+      <div className={css[`label-input`]}>
+        <label className={css.label} htmlFor="filter">
+          Find contact by name
+        </label>
+        <input
+          type="text"
+          name="filter"
+          placeholder="Find contact..."
+          onChange={this.handleFilterChange}
+        ></input>
+      </div>
     );
   }
 }
